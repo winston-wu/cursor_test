@@ -1,0 +1,59 @@
+---
+alwaysApply: false
+---
+> 此規則檔為團隊共同遵循，歡迎提出優化建議！
+description: >
+  These are cursor rules for Python files to aid navigation, understanding, and editing.
+matches:
+  - name: Function Definition
+    matcher:
+      type: regex
+      pattern: '^\s*def\s+\w+\(.*\):'
+    actions:
+      - move: toStart
+        description: Move cursor to the start of the function definition.
+      - select: block
+        description: Select the entire function block.
+
+  - name: Class Definition
+    matcher:
+      type: regex
+      pattern: '^\s*class\s+\w+\(?.*\)?:'
+    actions:
+      - move: toStart
+        description: Move cursor to the start of the class definition.
+      - select: block
+        description: Select the entire class block.
+
+  - name: Comment Line
+    matcher:
+      type: regex
+      pattern: '^\s*#.*'
+    actions:
+      - select: line
+        description: Select the comment line.
+
+  - name: Import Statement
+    matcher:
+      type: regex
+      pattern: '^\s*(import|from)\s+\w+'
+    actions:
+      - select: line
+        description: 選取 import 陳述式這一行。
+  - name: String Literal
+    matcher:
+      type: regex
+      pattern: '"([^"\\]|\\.)*"|\'([^\'\\]|\\.)*\''
+    actions:
+      - select: token
+        description: Select the quoted string.
+
+  - name: Docstring
+    matcher:
+      type: regex
+      pattern: '^\s*[ruRU]{0,2}"""(?:.|\n)*?"""|^\s*[ruRU]{0,2}\'\'\'(?:.|\n)*?\'\'\''
+    actions:
+      - select: block
+        description: Select the whole docstring.
+
+
