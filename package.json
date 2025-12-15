@@ -1,0 +1,10 @@
+{
+  "name": "cursor_test",
+  "version": "1.0.0",
+  "description": "Test repository with Playwright MCP",
+  "private": true,
+  "dependencies": {
+    "@playwright/mcp": "latest"
+  }
+}
+
