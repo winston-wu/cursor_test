@@ -4,7 +4,8 @@
   "description": "Test repository with Playwright MCP",
   "private": true,
   "dependencies": {
-    "@playwright/mcp": "latest"
+    "@playwright/mcp": "latest",
+    "@modelcontextprotocol/server-filesystem": "latest"
   }
 }
 
